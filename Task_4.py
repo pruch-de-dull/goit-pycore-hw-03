@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
-def get_upcoming_birthdays(users):
+
+def get_upcoming_birthdays(users: list[dict]) -> list[dict]:
     today = datetime.today().date()
     upcoming_birthdays = []
     
@@ -32,11 +33,13 @@ def get_upcoming_birthdays(users):
 
     return upcoming_birthdays
 
-users = [
-    {"name": "John Doe", "birthday": "1999.10.11"},
-    {"name": "Jane Smith", "birthday": "1990.11.01"},
-    {"name": "Bob Lee", "birthday": "2000.10.27"},
-    {"name": "New Year Guy", "birthday": "1995.01.02"} 
-]
 
-print(get_upcoming_birthdays(users))
+if __name__ == "__main__":
+    users = [
+        {"name": "John Doe", "birthday": "1999.10.11"},
+        {"name": "Jane Smith", "birthday": "1990.11.01"},
+        {"name": "Bob Lee", "birthday": "2000.10.27"},
+        {"name": "New Year Guy", "birthday": "1995.01.02"} 
+    ]
+    
+    print(get_upcoming_birthdays(users))
